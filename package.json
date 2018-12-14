@@ -1,0 +1,30 @@
+{
+  "name": "ncfxy.github.io",
+  "version": "1.0.0",
+  "description": "You can use the [editor on GitHub](https://github.com/ncfxy/ncfxy.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.",
+  "main": "index.js",
+  "dependencies": {
+    "cz-conventional-changelog": "^2.1.0"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "^2.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ncfxy/ncfxy.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ncfxy/ncfxy.github.io/issues"
+  },
+  "homepage": "https://github.com/ncfxy/ncfxy.github.io#readme",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
