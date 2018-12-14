@@ -4,13 +4,13 @@
   "description": "You can use the [editor on GitHub](https://github.com/ncfxy/ncfxy.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.",
   "main": "index.js",
   "dependencies": {
-    "cz-conventional-changelog": "^2.1.0"
   },
   "devDependencies": {
     "cz-conventional-changelog": "^2.1.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generateChangelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "repository": {
     "type": "git",
