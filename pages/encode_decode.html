@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Encode & Decode</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- 因为 AJAX 库和通用工具的生态已经相当丰富，Vue 核心代码没有重复 -->
+    <!-- 提供这些功能以保持精简。这也可以让你自由选择自己更熟悉的工具。 -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/crypto-js@3.1.9-1/crypto-js.js"></script>
+    <link rel="stylesheet" href="/css/encode_decode.css">
+
+</head>
+<body>
+    <div id="main-app">
+        <h3>Content Before Encode/Decode:</h3>
+        <textarea rows="10" v-model="inputContent"></textarea>
+        <div>Key: <input v-model="key" type="password"></input></div>
+        <div class="hash-methods-action-buttons">
+            <button v-for="method in hashMethods" v-on:click="calcForHashMethod(method)">
+                {{method}}
+            </button>
+        </div>
+        <div class="encode-methods-action-buttons">
+            <button v-for="method in encodeMethods" v-on:click="encodeMethod(method)">
+                {{method}}_encode
+            </button>
+        </div>
+        <div class="decode-methods-action-buttons">
+            <button v-for="method in decodeMethods" v-on:click="decodeMethod(method)">
+                {{method}}_decode
+            </button>
+        </div>
+        <h3>Result:</h3>
+        <textarea rows="10" v-model="resultContent"></textarea>
+    </div>
+</body>
+</html>
+
+<script src="/js/encode_decode.js"></script>
