@@ -11,31 +11,44 @@
     <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/crypto-js@3.1.9-1/crypto-js.js"></script>
+    <script src="https://unpkg.com/element-ui@2.4.11/lib/index.js"></script>
     <link rel="stylesheet" href="/css/encode_decode.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui@2.4.11/lib/theme-chalk/index.css">
 
 </head>
 <body>
-    <div id="main-app">
+    <div id="main-app" class="main-app">
         <h3>Content Before Encode/Decode:</h3>
-        <textarea rows="10" v-model="inputContent"></textarea>
-        <div>Key: <input v-model="key" type="password"></input></div>
-        <div class="hash-methods-action-buttons">
-            <button v-for="method in hashMethods" v-on:click="calcForHashMethod(method)">
-                {{method}}
-            </button>
+        <div class="input-area">
+            <el-input class="input-area" type="textarea" rows="10" v-model="inputContent" placeholder="Please input your original content">
+            </el-input>
+            <el-row class="key-input-row">
+                <h3>Key: </h3>
+                <el-input v-model="key" type="password" placeholder="Only valid when selected method support"></el-input>
+            </el-row>
+            <div class="hash-methods-action-buttons">
+                <el-button v-for="method in hashMethods" v-on:click="calcForHashMethod(method)">
+                    {{method}}
+                </el-button>
+            </div>
+            <div class="hash-methods-action-buttons">
+                <el-button v-for="method in hashMethodsWithKey" v-on:click="calcForHashMethod(method)">
+                    {{method}}
+                </el-button>
+            </div>
+            <div class="encode-methods-action-buttons">
+                <el-button v-for="method in encodeMethods" v-on:click="encodeMethod(method)">
+                    {{method}}_encode
+                </el-button>
+            </div>
+            <div class="decode-methods-action-buttons">
+                <el-button v-for="method in decodeMethods" v-on:click="decodeMethod(method)">
+                    {{method}}_decode
+                </el-button>
+            </div>
+            <h3>Result:</h3>
+            <el-input class="input-area" type="textarea" rows="10" v-model="resultContent"></el-input>
         </div>
-        <div class="encode-methods-action-buttons">
-            <button v-for="method in encodeMethods" v-on:click="encodeMethod(method)">
-                {{method}}_encode
-            </button>
-        </div>
-        <div class="decode-methods-action-buttons">
-            <button v-for="method in decodeMethods" v-on:click="decodeMethod(method)">
-                {{method}}_decode
-            </button>
-        </div>
-        <h3>Result:</h3>
-        <textarea rows="10" v-model="resultContent"></textarea>
     </div>
 </body>
 </html>

@@ -6,7 +6,9 @@ var app = new Vue({
         resultContent: '',
         key: '',
         hashMethods:[
-            'MD5', 'SHA1', 'SHA3', 'SHA224', 'SHA256', 'SHA384', /*'SHA512', 'RIPEMD160'*/
+            'MD5', 'SHA1', 'SHA3', 'SHA224', 'SHA256', 'SHA384' /*'SHA512', 'RIPEMD160'*/
+            ],
+        hashMethodsWithKey:[
             'HmacMD5', 'HmacSHA1', 'HmacSHA3', 'HmacSHA224', 'HmacSHA256', 'HmacSHA384'/*, 'HmacSHA512', 'HmacRIPEMD160'*/
         ],
         encodeMethods:[
