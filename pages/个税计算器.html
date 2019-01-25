@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://47.106.119.250:8080/2019geshui.html -->
+<html class="gr__47_106_119_250"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="keywords" content="2019个税,2019新版个税计算器">
+<meta name="description" content="2019新版个税计算器，可计算每月个税。">
+<title>2019年个税计算器</title>
+<style type="text/css">
+body {font-size: 13px;}
+input {height: 15px; width: 126px; line-height: 15px; padding: 1px; font-size: 13px;}
+#head {font-size: 14px}
+#line input {width: 50px;}
+.error {color: red;}
+.detail {font-size: 12px}
+</style>
+</head>
+<body data-gr-c-s-loaded="true">
+	<h1>2019年个税计算器</h1>
+	<table id="head">
+		<tbody><tr>
+			<th>税前工资</th>
+			<td><input id="gz" value="30000"> 元/月 <span class="error" style="display: none;">请输入工资，且必须大于5000元~</span></td>
+		</tr>
+		<tr>
+			<th>五险一金</th>
+			<td><input id="wxyj" value="3000"> 元/月</td>
+		</tr>
+		<tr>
+			<th>专项扣除</th>
+			<td><input id="zxkc" value="3000"> 元/月</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="text-align: center;">
+				<button onclick="startWork()" style="width: 80%; margin-top: 10px;">开始计算</button>　
+			</td>
+		</tr>
+	</tbody></table>
+
+	<br>每月扣税（可调整各项额度）<hr>
+
+	<table id="line"><tbody><tr class="title_line"><th>月份</th><th>税前工资</th><th>五险一金</th><th>专项扣除</th><th>个税</th><th>到手工资</th></tr><tr id="line1"><td>1月</td><td><input onchange="startCore()" id="gz1" value="30000"></td><td><input onchange="startCore()" id="wxyj1" value="3000"></td><td><input onchange="startCore()" id="zxkc1" value="3000"></td><td id="gs1"><strong>570</strong>元</td><td id="dsgs1"><strong>26430</strong>元</td></tr><tr id="line1"><td>2月</td><td><input onchange="startCore()" id="gz2" value="30000"></td><td><input onchange="startCore()" id="wxyj2" value="3000"></td><td><input onchange="startCore()" id="zxkc2" value="3000"></td><td id="gs2"><strong>710</strong>元</td><td id="dsgs2"><strong>26290</strong>元</td></tr><tr id="line1"><td>3月</td><td><input onchange="startCore()" id="gz3" value="30000"></td><td><input onchange="startCore()" id="wxyj3" value="3000"></td><td><input onchange="startCore()" id="zxkc3" value="3000"></td><td id="gs3"><strong>1900</strong>元</td><td id="dsgs3"><strong>25100</strong>元</td></tr><tr id="line1"><td>4月</td><td><input onchange="startCore()" id="gz4" value="30000"></td><td><input onchange="startCore()" id="wxyj4" value="3000"></td><td><input onchange="startCore()" id="zxkc4" value="3000"></td><td id="gs4"><strong>1900</strong>元</td><td id="dsgs4"><strong>25100</strong>元</td></tr><tr id="line1"><td>5月</td><td><input onchange="startCore()" id="gz5" value="30000"></td><td><input onchange="startCore()" id="wxyj5" value="3000"></td><td><input onchange="startCore()" id="zxkc5" value="3000"></td><td id="gs5"><strong>1900</strong>元</td><td id="dsgs5"><strong>25100</strong>元</td></tr><tr id="line1"><td>6月</td><td><input onchange="startCore()" id="gz6" value="30000"></td><td><input onchange="startCore()" id="wxyj6" value="3000"></td><td><input onchange="startCore()" id="zxkc6" value="3000"></td><td id="gs6"><strong>1900</strong>元</td><td id="dsgs6"><strong>25100</strong>元</td></tr><tr id="line1"><td>7月</td><td><input onchange="startCore()" id="gz7" value="30000"></td><td><input onchange="startCore()" id="wxyj7" value="3000"></td><td><input onchange="startCore()" id="zxkc7" value="3000"></td><td id="gs7"><strong>1900</strong>元</td><td id="dsgs7"><strong>25100</strong>元</td></tr><tr id="line1"><td>8月</td><td><input onchange="startCore()" id="gz8" value="30000"></td><td><input onchange="startCore()" id="wxyj8" value="3000"></td><td><input onchange="startCore()" id="zxkc8" value="3000"></td><td id="gs8"><strong>2700</strong>元</td><td id="dsgs8"><strong>24300</strong>元</td></tr><tr id="line1"><td>9月</td><td><input onchange="startCore()" id="gz9" value="30000"></td><td><input onchange="startCore()" id="wxyj9" value="3000"></td><td><input onchange="startCore()" id="zxkc9" value="3000"></td><td id="gs9"><strong>3800</strong>元</td><td id="dsgs9"><strong>23200</strong>元</td></tr><tr id="line1"><td>10月</td><td><input onchange="startCore()" id="gz10" value="30000"></td><td><input onchange="startCore()" id="wxyj10" value="3000"></td><td><input onchange="startCore()" id="zxkc10" value="3000"></td><td id="gs10"><strong>3800</strong>元</td><td id="dsgs10"><strong>23200</strong>元</td></tr><tr id="line1"><td>11月</td><td><input onchange="startCore()" id="gz11" value="30000"></td><td><input onchange="startCore()" id="wxyj11" value="3000"></td><td><input onchange="startCore()" id="zxkc11" value="3000"></td><td id="gs11"><strong>3800</strong>元</td><td id="dsgs11"><strong>23200</strong>元</td></tr><tr id="line1"><td>12月</td><td><input onchange="startCore()" id="gz12" value="30000"></td><td><input onchange="startCore()" id="wxyj12" value="3000"></td><td><input onchange="startCore()" id="zxkc12" value="3000"></td><td id="gs12"><strong>3800</strong>元</td><td id="dsgs12"><strong>23200</strong>元</td></tr><tr><td id="hj" colspan="6"><table><tbody><tr><td><strong>　　个税合计：28680元</strong></td><td><strong>　　　个税平均：2390元/月</strong></td></tr><tr><td><strong>到手工资合计：295320元</strong></td><td><strong>　到手工资平均：24610元/月</strong></td></tr></tbody></table></td></tr></tbody></table>
+
+	<br>
+	<div onclick="switchDetail()" style="color:blue; cursor: pointer;">》显示扣税详情</div>
+	<div id="detail" style="display: none;"><hr><div>1月 (30000*1 - 5000*1 - 3000*1 - 3000*1)*0.03 - 0 - 0 = <strong>570</strong>元</div><div>2月 (30000*2 - 5000*2 - 3000*2 - 3000*2)*0.1 - 2520 - 570 = <strong>710</strong>元</div><div>3月 (30000*3 - 5000*3 - 3000*3 - 3000*3)*0.1 - 2520 - 1280 = <strong>1900</strong>元</div><div>4月 (30000*4 - 5000*4 - 3000*4 - 3000*4)*0.1 - 2520 - 3180 = <strong>1900</strong>元</div><div>5月 (30000*5 - 5000*5 - 3000*5 - 3000*5)*0.1 - 2520 - 5080 = <strong>1900</strong>元</div><div>6月 (30000*6 - 5000*6 - 3000*6 - 3000*6)*0.1 - 2520 - 6980 = <strong>1900</strong>元</div><div>7月 (30000*7 - 5000*7 - 3000*7 - 3000*7)*0.1 - 2520 - 8880 = <strong>1900</strong>元</div><div>8月 (30000*8 - 5000*8 - 3000*8 - 3000*8)*0.2 - 16920 - 10780 = <strong>2700</strong>元</div><div>9月 (30000*9 - 5000*9 - 3000*9 - 3000*9)*0.2 - 16920 - 13480 = <strong>3800</strong>元</div><div>10月 (30000*10 - 5000*10 - 3000*10 - 3000*10)*0.2 - 16920 - 17280 = <strong>3800</strong>元</div><div>11月 (30000*11 - 5000*11 - 3000*11 - 3000*11)*0.2 - 16920 - 21080 = <strong>3800</strong>元</div><div>12月 (30000*12 - 5000*12 - 3000*12 - 3000*12)*0.2 - 16920 - 24880 = <strong>3800</strong>元</div></div>
+
+<script src="./2019年个税计算器_files/jquery-1.9.1.min.js.下载"></script>
+<script type="text/javascript">
+startWork();
+$(window).bind('keypress', function (event) { 
+   if (event.keyCode == "13") { 
+   		startWork();
+   }
+})
+
+function startWork() {
+	var gz = $("#gz").val();
+	if(!gz || gz < 5000) {
+		$(".error").show();
+		return;
+	}
+	$(".error").hide();
+
+
+	var wxyj = $("#wxyj").val() || 0;
+	var zxkc = $("#zxkc").val() || 0;
+	var html = '<tr class="title_line"><th>月份</th><th>税前工资</th><th>五险一金</th><th>专项扣除</th><th>个税</th><th>到手工资</th></tr>';
+	for(var i = 1; i <= 12; i++) {
+		html += '<tr id="line1">' + 
+					'<td>' + i + '月</td>' + 
+					'<td><input onchange="startCore()" id="gz' + i + '" value="' + gz + '" /></td>' + 
+					'<td><input onchange="startCore()" id="wxyj' + i + '" value="' + wxyj + '" /></td>' + 
+					'<td><input onchange="startCore()" id="zxkc' + i + '" value="' + zxkc + '" /></td>' + 
+					'<td id="gs' + i + '"></td>' + 
+					'<td id="dsgs' + i + '"></td>' + 
+				'</tr>';
+	}
+	html += "<tr><td id='hj' colspan=6></td></tr>";
+	$("#line").html(html);
+	startCore();
+}
+
+function startCore() {
+	var gsTotal = 0;
+	var dsgzTotal = 0;
+	var detail = "";
+	for(var i = 1; i <= 12; i++) {
+		var gz = $("#gz" + i).val();
+		var wxyj = $("#wxyj" + i).val() || 0;
+		var zxkc = $("#zxkc" + i).val() || 0;
+		var gsed = gz * i - 5000 * i - wxyj * i - zxkc * i;
+		var rule = getRule(gsed);
+		var gs = Math.round(gsed * rule[0] - rule[1] - gsTotal);
+		$("#gs" + i).html("<strong>" + gs + "</strong>元");
+		$("#dsgs" + i).html("<strong>" + (gz - wxyj -gs) + "</strong>元");
+
+		detail += "<div>" + i + "月 (" + gz + "*" + i + " - 5000*" + i + " - " + wxyj + "*" + i + " - " + zxkc + "*" + i + ")*" + rule[0] + " - " + rule[1] + " - " + gsTotal + " = <strong>" + gs + "</strong>元</div>";
+		gsTotal += gs;
+		dsgzTotal += (gz - wxyj -gs);
+		$("#hj").html("<table><tr><td><strong>　　个税合计：" + gsTotal + "元</strong></td><td><strong>　　　个税平均：" + Math.round(gsTotal / 12) + "元/月</strong></td></tr><tr><td><strong>到手工资合计：" + dsgzTotal + "元</strong></td><td><strong>　到手工资平均：" + Math.round(dsgzTotal / 12) + "元/月</strong></td></tr></table>");	
+	}
+
+	$("#detail").html("<hr />" + detail);
+}
+
+function getRule(gsed) {
+	if(gsed <= 36000) {
+		return [0.03, 0];
+	}
+	if(gsed <= 144000) {
+		return [0.1, 2520];
+	}
+	if(gsed <= 300000) {
+		return [0.2, 16920];
+	}
+	if(gsed <= 420000) {
+		return [0.25, 31920];
+	}
+	if(gsed <= 660000) {
+		return [0.3, 52920];
+	}
+	if(gsed <= 960000) {
+		return [0.35, 85920];
+	}
+	if(gsed > 960000) {
+		return [0.45, 181920];
+	}
+}
+
+function switchDetail() {
+	var d = $("#detail");
+	if(d.css("display") == "none") {
+		d.show();
+	}else {
+		d.hide();
+	}
+}
+</script>
+
+
+</body><span class="gr__tooltip  gr__flipped" data-content="No definition found" style="opacity: 0; top: -9999px; left: 151px;"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle" style="margin-left: 6.5px;"></span></span></html>

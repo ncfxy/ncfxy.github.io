@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Personal Income Tax 2019</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- 因为 AJAX 库和通用工具的生态已经相当丰富，Vue 核心代码没有重复 -->
+    <!-- 提供这些功能以保持精简。这也可以让你自由选择自己更熟悉的工具。 -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/crypto-js@3.1.9-1/crypto-js.js"></script>
+    <script src="https://unpkg.com/element-ui@2.4.11/lib/index.js"></script>
+    <link rel="stylesheet" href="/css/personal_income_tax_2019.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui@2.4.11/lib/theme-chalk/index.css">
+</head>
+<body>
+	<div id="main-app" class="main-app">
+		<h1>2019年最新个税计算器</h1>
+		<div class="input-area">
+			<div class="data-input-wrapper">
+				<label class="data-input-label">税前工资: </label>
+				<div class="data-input-area">
+					<el-input type="text" v-model="incomeBeforeTax" placeholder="请输入工资，且必须大于5000元" >
+						<template slot="append">元/月</template>
+					</el-input> 
+				</div>
+			</div>
+			<div class="data-input-wrapper">
+				<label class="data-input-label">五险一金: </label>
+				<div class="data-input-area">
+					<el-input type="text" v-model="fiveInsuranceOneFund" placeholder="请输入交纳五险一金金额" >
+						<template slot="append">元/月</template>
+					</el-input> 
+				</div>
+			</div>
+			<div class="data-input-wrapper">
+				<label class="data-input-label">专项扣除: </label>
+				<div class="data-input-area">
+					<el-input type="text" v-model="specialItems" placeholder="请输入专项扣除金额" >
+						<template slot="append">元/月</template>
+					</el-input> 
+				</div>
+			</div>
+			<div class="start-calc-button">
+				<el-button v-on:click="startCalc()">开始计算</el-button>
+			</div>
+		</div>
+		<div class="calcArea">
+			
+		</div>
+	</div>
+</body>
+</html>
+
+<script src="/js/personal_income_tax_2019.js"></script>
