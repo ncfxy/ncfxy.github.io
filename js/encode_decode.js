@@ -1,22 +1,23 @@
-var app = new Vue({
-    el: '#main-app',
-    data: {
-        message: 'Hello Vue!',
-        inputContent: '',
-        resultContent: '',
-        key: '',
-        hashMethods:[
-            'MD5', 'SHA1', 'SHA3', 'SHA224', 'SHA256', 'SHA384' /*'SHA512', 'RIPEMD160'*/
+const mainApp = {
+    data() {
+        return {
+            message: 'Hello Vue!',
+            inputContent: '',
+            resultContent: '',
+            key: '',
+            hashMethods:[
+                'MD5', 'SHA1', 'SHA3', 'SHA224', 'SHA256', 'SHA384' /*'SHA512', 'RIPEMD160'*/
+                ],
+            hashMethodsWithKey:[
+                'HmacMD5', 'HmacSHA1', 'HmacSHA3', 'HmacSHA224', 'HmacSHA256', 'HmacSHA384'/*, 'HmacSHA512', 'HmacRIPEMD160'*/
             ],
-        hashMethodsWithKey:[
-            'HmacMD5', 'HmacSHA1', 'HmacSHA3', 'HmacSHA224', 'HmacSHA256', 'HmacSHA384'/*, 'HmacSHA512', 'HmacRIPEMD160'*/
-        ],
-        encodeMethods:[
-            'AES', 'TripleDES', 'RC4', 'Rabbit', 'RabbitLegacy', 'EvpKDF'
-        ],
-        decodeMethods:[
-            'AES', 'TripleDES', 'RC4', 'Rabbit', 'RabbitLegacy', 'EvpKDF'
-        ]
+            encodeMethods:[
+                'AES', 'TripleDES', 'RC4', 'Rabbit', 'RabbitLegacy', 'EvpKDF'
+            ],
+            decodeMethods:[
+                'AES', 'TripleDES', 'RC4', 'Rabbit', 'RabbitLegacy', 'EvpKDF'
+            ]
+        }
     },
     methods: {
         calcForHashMethod: function(methodName){
@@ -35,6 +36,6 @@ var app = new Vue({
             }
             this.resultContent = result;
         }
-         
     }
-});
+}
+Vue.createApp(mainApp).use(ElementPlus).mount('#main-app');
